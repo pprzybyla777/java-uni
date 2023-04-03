@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Cylinder {
 
     private double radius;
@@ -44,21 +43,6 @@ public class Cylinder {
 
     public double volume() {
         return this.surfaceArea() * this.height;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("This class deals with math operations for a cylinder");
-        System.out.print("Radius: ");
-        double radius = scanner.nextDouble();
-        System.out.print("Height: ");
-        double height = scanner.nextDouble();
-        Cylinder cylinder = new Cylinder(radius, height);
-        System.out.println("1 - print radius and height");
-        System.out.println("2 - change radius and height");
-        System.out.println("3 - calculate ");
-        System.out.println("4 - ");
-
     }
 
 }
