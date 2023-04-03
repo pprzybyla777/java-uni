@@ -5,12 +5,10 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("This class deals with math operations for a cylinder");
-        System.out.print("Radius: ");
-        double radius = scanner.nextDouble();
-        System.out.print("Height: ");
-        double height = scanner.nextDouble();
-        Cylinder cylinder = new Cylinder(radius, height);
+
+        Cylinder cylinder = new Cylinder();
+
+        System.out.println("This class deals with math operations for a cylinder \n");
 
         boolean isRunning = true;
 
@@ -21,36 +19,47 @@ public class Main {
             System.out.println(" 2 - change radius and height");
             System.out.println(" 3 - print all surface areas and volume");
             System.out.println(" 4 - exit ");
+            System.out.println("\n");
             //
+
             System.out.print("Choose option: ");
             int option = scanner.nextInt();
 
-            if (option == 1) {
+            switch (option) {
+                case 1:
+                    System.out.println();
+                    System.out.println("Radius: " + cylinder.getRadius());
+                    System.out.println("Height: " + cylinder.getHeight());
+                    System.out.println();
 
-                System.out.println("Radius: " + cylinder.getRadius());
-                System.out.println("Height: " + cylinder.getHeight());
-
-            } else if (option == 2) {
-
-                System.out.print("New radius: ");
-                radius = scanner.nextDouble();
-                System.out.print("New height: ");
-                height = scanner.nextDouble();
-
-                cylinder.setRadius(radius);
-                cylinder.setHeight(height);
-
-
-            } else if (option == 3) {
-
-                System.out.println("Surface Area: " + cylinder.surfaceArea());
-                System.out.println("Lateral Area: " + cylinder.lateralArea());
-                System.out.println("Total Surface Area: " + cylinder.totalSurfaceArea());
-                System.out.println("Volume: " + cylinder.volume());
-
-            } else if (option == 4 ) {
-                System.out.println("Goodbye!");
-                isRunning = false;
+                    break;
+                case 2:
+                    System.out.println();
+                    System.out.print("New radius: ");
+                    double radius = scanner.nextDouble();
+                    System.out.print("New height: ");
+                    double height = scanner.nextDouble();
+                    cylinder.setRadius(radius);
+                    cylinder.setHeight(height);
+                    System.out.println();
+                    break;
+                case 3:
+                    System.out.println();
+                    System.out.println("Surface Area: " + cylinder.surfaceArea());
+                    System.out.println("Lateral Area: " + cylinder.lateralArea());
+                    System.out.println("Total Surface Area: " + cylinder.totalSurfaceArea());
+                    System.out.println("Volume: " + cylinder.volume());
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.println();
+                    System.out.println("Goodbye!");
+                    isRunning = false;
+                    break;
+                default:
+                    System.out.println();
+                    System.out.println("Invalid option");
+                    break;
             }
         }
     }
